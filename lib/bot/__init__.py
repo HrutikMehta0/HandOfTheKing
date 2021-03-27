@@ -9,7 +9,7 @@ from discord.ext.commands import Bot as BotBase
 PREFIX = "-"
 OWNER_IDS = []
 TOKEN = os.environ.get("TOKEN")
-COGS = [path.split("\\")[-1][:-3] for path in glob.glob("lib/cogs/*.py")]
+COGS = [path.split("\\")[-1][:-3] for path in os.listdir("lib/cogs/*.py")]
 
 
 class Ready(object):
