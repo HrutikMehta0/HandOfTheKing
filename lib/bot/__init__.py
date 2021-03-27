@@ -32,6 +32,7 @@ class Bot(BotBase):
         self.VERSION = None
         self.stdout = None
         self.welcome = None
+        self.TOKEN = None
         self.scheduler = AsyncIOScheduler()
 
         super().__init__(
