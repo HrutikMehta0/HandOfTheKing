@@ -89,3 +89,4 @@ class Bot(BotBase):
 
 
 bot = Bot()
+bot.run('ODIyMjI2OTM2OTUyMzg5NjMz.YFPMgg.X2-yIomJ-DXTXteEhn_sE4ETugk')
