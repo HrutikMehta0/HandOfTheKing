@@ -14,7 +14,7 @@ class Welcome(Cog):
 
     @Cog.listener()
     async def on_member_join(self, member):
-        db.execute("INSERT INTO exp (UserID) VALUES (?)", member.id)
+        #db.execute("INSERT INTO exp (UserID) VALUES (?)", member.id)
         await self.bot.welcome.send(
             f"Welcome to **{member.guild.name}** {member.mention}! Check out our <#816489394612600832> and head over "
             f"to <#816694604840828949> for roles.")
