@@ -1,4 +1,5 @@
 import glob
+import os
 from asyncio import sleep
 
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
@@ -7,6 +8,7 @@ from discord.ext.commands import Bot as BotBase
 
 PREFIX = "-"
 OWNER_IDS = []
+TOKEN = os.environ.get("DISCORD_BOT_SECRET")
 COGS = [path.split("\\")[-1][:-3] for path in glob.glob("cogs/*.py")]
 
 
@@ -32,7 +34,7 @@ class Bot(BotBase):
         self.VERSION = None
         self.stdout = None
         self.welcome = None
-        self.TOKEN = None
+        self.TOKEN = TOKEN
         self.scheduler = AsyncIOScheduler()
 
         super().__init__(
@@ -49,8 +51,6 @@ class Bot(BotBase):
     def run(self, version):
         self.VERSION = version
         self.setup()
-        with open("lib/bot/token", "r", encoding="utf-8") as tf:
-            self.TOKEN = tf.read()
 
         print("Running bot...")
         super().run(self.TOKEN, reconnect=True)
