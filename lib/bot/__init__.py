@@ -8,8 +8,8 @@ from discord.ext.commands import Bot as BotBase
 
 PREFIX = "-"
 OWNER_IDS = []
-TOKEN = os.environ.get("TOKEN")
-COGS = [path.split("\\")[-1][:-3] for path in glob.glob("cogs/*.py")]
+TOKEN = 'ODIyMjI2OTM2OTUyMzg5NjMz.YFPMgg.bx8wJN6vXyO3mpNodDylDjDSyqw'
+COGS = [path.split("\\")[-1][:-3] for path in glob.glob("lib/cogs/*.py")]
 
 
 class Ready(object):

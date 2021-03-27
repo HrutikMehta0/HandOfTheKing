@@ -1,6 +1,6 @@
 from discord.ext.commands import Cog
 
-from ..db import db
+#from ..db import db
 
 
 class Welcome(Cog):
