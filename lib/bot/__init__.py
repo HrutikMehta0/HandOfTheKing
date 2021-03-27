@@ -71,10 +71,7 @@ class Bot(BotBase):
     async def on_ready(self):
         if not self.ready:
             self.guild = self.get_guild(816486491941109791)
-            self.stdout = self.get_channel(824689618334384138
-
-
-                                           )
+            self.stdout = self.get_channel(824689618334384138)
             self.welcome = self.get_channel(816491731503546368)
 
             while not self.cogs_ready.all_ready():
