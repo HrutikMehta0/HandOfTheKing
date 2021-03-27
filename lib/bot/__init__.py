@@ -8,7 +8,7 @@ from discord.ext.commands import Bot as BotBase
 
 PREFIX = "-"
 OWNER_IDS = []
-TOKEN = os.environ.get("DISCORD_BOT_SECRET")
+TOKEN = os.environ.get("TOKEN")
 COGS = [path.split("\\")[-1][:-3] for path in glob.glob("cogs/*.py")]
 
 
