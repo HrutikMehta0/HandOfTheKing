@@ -1,4 +1,4 @@
 discord.py
 apscheduler
 asyncio
-glob
+glob==5
