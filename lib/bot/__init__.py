@@ -8,7 +8,7 @@ from discord.ext.commands import Bot as BotBase
 
 PREFIX = "-"
 OWNER_IDS = []
-COGS = [path.split("\\")[-1][:-3] for path in glob.glob("lib/cogs/*.py")]
+COGS = [path.split("\\")[-1][:-3] for path in glob.glob("cogs/*.py")]
 
 
 class Ready(object):
