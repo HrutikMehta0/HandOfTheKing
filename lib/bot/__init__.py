@@ -9,12 +9,12 @@ from discord.ext.commands import Bot as BotBase
 PREFIX = "-"
 OWNER_IDS = []
 TOKEN = os.environ.get("TOKEN")
-COGS = [path.split("\\")[-1][:-3] for path in glob("lib/cogs/*.py")]
+COGS = [path.split("\\")[-1][:-3] for path in os.listdir("lib/cogs/*.py")]
 
 
 class Ready(object):
     def __init__(self):
-        for cog in COGS:
+        for cog in os.listdir("lib/cogs/*.py"):
             setattr(self, cog, False)
 
     def ready_up(self, cog):
@@ -22,7 +22,7 @@ class Ready(object):
         print(f"{cog} cog ready")
 
     def all_ready(self):
-        return all([getattr(self, cog) for cog in COGS])
+        return all([getattr(self, cog) for cog in os.listdir("lib/cogs/*.py")])
 
 
 class Bot(BotBase):
