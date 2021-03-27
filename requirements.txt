@@ -1,2 +1,5 @@
 discord.py
 apscheduler
+asyncio
+glob
+os
