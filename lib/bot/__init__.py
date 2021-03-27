@@ -50,6 +50,7 @@ class Bot(BotBase):
     def run(self, version):
         self.VERSION = version
         self.setup()
+        self.TOKEN = os.getenv('TOKEN')
 
         print("Running bot...")
         super().run(self.TOKEN, reconnect=True)
