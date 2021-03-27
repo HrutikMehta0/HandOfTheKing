@@ -1,5 +1,4 @@
 import glob
-import os
 from asyncio import sleep
 
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
@@ -31,7 +30,7 @@ class Bot(BotBase):
         self.cogs_ready = Ready()
         self.guild = None
         self.VERSION = None
-        self.TOKEN = os.getenv("TOKEN")
+        self.TOKEN = None
         self.stdout = None
         self.welcome = None
         self.scheduler = AsyncIOScheduler()
