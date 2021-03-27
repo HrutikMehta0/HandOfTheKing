@@ -1,5 +1,4 @@
 import glob
-import os
 from asyncio import sleep
 
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
@@ -8,13 +7,13 @@ from discord.ext.commands import Bot as BotBase
 
 PREFIX = "-"
 OWNER_IDS = []
-TOKEN = os.environ.get("TOKEN")
-#COGS = [path.split("\\")[-1][:-3] for path in os.listdir("lib/cogs/*.py")]
+TOKEN = 'ODIyMjI2OTM2OTUyMzg5NjMz.YFPMgg.PzDj3fimGrrxHaWYa0h6ke8H7e4'
+COGS = [path.split("\\")[-1][:-3] for path in glob.glob("lib/cogs/*.py")]
 
 
 class Ready(object):
     def __init__(self):
-        for cog in os.listdir("lib/cogs/*.py"):
+        for cog in COGS:
             setattr(self, cog, False)
 
     def ready_up(self, cog):
@@ -22,7 +21,7 @@ class Ready(object):
         print(f"{cog} cog ready")
 
     def all_ready(self):
-        return all([getattr(self, cog) for cog in os.listdir("lib/cogs/*.py")])
+        return all([getattr(self, cog) for cog in COGS])
 
 
 class Bot(BotBase):
