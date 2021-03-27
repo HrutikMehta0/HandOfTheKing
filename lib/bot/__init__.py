@@ -1,6 +1,6 @@
+import glob
 import os
 from asyncio import sleep
-from glob import glob
 
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from discord import Intents
@@ -8,7 +8,7 @@ from discord.ext.commands import Bot as BotBase
 
 PREFIX = "-"
 OWNER_IDS = []
-COGS = [path.split("\\")[-1][:-3] for path in "lib/cogs/*.py"]
+COGS = [path.split("\\")[-1][:-3] for path in glob.glob("lib/cogs/*.py")]
 
 
 class Ready(object):
