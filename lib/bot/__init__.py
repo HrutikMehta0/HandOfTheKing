@@ -13,24 +13,24 @@ COGS = [os.path.abspath(x) for x in os.listdir(os.path.join(os.path.split(currDi
 
 
 
-class Ready(object):
-    def __init__(self):
-        for cog in COGS:
-            setattr(self, cog, False)
-
-    def ready_up(self, cog):
-        setattr(self, cog, True)
-        print(f"{cog} cog ready")
-
-    def all_ready(self):
-        return all([getattr(self, cog) for cog in COGS])
+# class Ready(object):
+#     def __init__(self):
+#         for cog in COGS:
+#             setattr(self, cog, False)
+#
+#     def ready_up(self, cog):
+#         setattr(self, cog, True)
+#         print(f"{cog} cog ready")
+#
+#     def all_ready(self):
+#         return all([getattr(self, cog) for cog in COGS])
 
 
 class Bot(BotBase):
     def __init__(self):
         self.PREFIX = PREFIX
         self.ready = False
-        self.cogs_ready = Ready()
+        # self.cogs_ready = Ready()
         self.guild = None
         self.VERSION = None
         self.stdout = None
