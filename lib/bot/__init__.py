@@ -46,6 +46,7 @@ class Bot(BotBase):
 
     def setup(self):
         for cog in COGS:
+            print(os.path.join(os.path.split(currDir)[0], "cogs", cog, ".py"))
             self.load_extension(os.path.join(os.path.split(currDir)[0], "cogs", cog, ".py"))
         print("setup complete")
 
