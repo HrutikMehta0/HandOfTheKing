@@ -46,6 +46,7 @@ class Bot(BotBase):
 
     def setup(self):
         for cog in COGS:
+            print(cog)
             self.load_extension(f'{cog}')
         print("setup complete")
 
