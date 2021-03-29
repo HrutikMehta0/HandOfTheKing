@@ -37,7 +37,7 @@ class Bot(BotBase):
         self.welcome = None
         self.TOKEN = TOKEN
         self.scheduler = AsyncIOScheduler()
-
+        print(COGS)
         super().__init__(
             command_prefix=PREFIX,
             owner_ids=OWNER_IDS,
