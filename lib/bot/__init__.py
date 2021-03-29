@@ -1,4 +1,4 @@
-import glob
+import os
 
 from asyncio import sleep
 
@@ -9,7 +9,7 @@ from discord.ext.commands import Bot as BotBase
 PREFIX = "-"
 OWNER_IDS = []
 TOKEN = 'ODIyMjI2OTM2OTUyMzg5NjMz.YFPMgg.PzDj3fimGrrxHaWYa0h6ke8H7e4'
-COGS = [path.split("\\")[-1][:-3] for path in glob.glob("lib/cogs/*.py")]
+COGS = [os.path.abspath(x) for x in os.listdir('./cogs')if x.endswith(".py")]
 
 
 class Ready(object):
