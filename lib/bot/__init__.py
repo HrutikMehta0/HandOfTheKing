@@ -45,9 +45,8 @@ class Bot(BotBase):
         )
 
     def setup(self):
-        for filename in os.listdir(os.path.join(os.path.split(currDir)[0], "cogs")):
-            if filename.endswith('.py'):
-                self.load_extension(f"../lib/cogs/{filename[:-3]}")
+        for cog in COGS:
+            self.load_extension(os.path.abspath(os.path.join(os.path.split(currDir)[0], "cogs", cog, ".py")))
         print("setup complete")
 
     def run(self, version):
