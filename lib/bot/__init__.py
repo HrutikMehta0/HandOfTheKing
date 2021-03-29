@@ -9,14 +9,14 @@ currDir = os.path.dirname(__file__)
 PREFIX = "-"
 OWNER_IDS = []
 TOKEN = 'ODIyMjI2OTM2OTUyMzg5NjMz.YFPMgg.PzDj3fimGrrxHaWYa0h6ke8H7e4'
-COGS = [x for x in os.listdir(os.path.join(os.path.split(currDir)[0], "cogs")) if x.endswith(".py")]
+print(currDir)
+COGS = [x for x in os.listdir(os.path.join(os.path.split(currDir)[0], "cogs"))if x.endswith(".py")]
 print(COGS)
 
 
 class Ready(object):
     def __init__(self):
         for cog in COGS:
-            print("1." + cog)
             setattr(self, cog, False)
 
     def ready_up(self, cog):
