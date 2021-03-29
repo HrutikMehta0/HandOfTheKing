@@ -1,7 +1,6 @@
 import os
 
 from asyncio import sleep
-
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from discord import Intents
 from discord.ext.commands import Bot as BotBase
