@@ -9,7 +9,7 @@ currDir = os.path.dirname(__file__)
 PREFIX = "-"
 OWNER_IDS = []
 TOKEN = 'ODIyMjI2OTM2OTUyMzg5NjMz.YFPMgg.PzDj3fimGrrxHaWYa0h6ke8H7e4'
-COGS = [x for x in os.listdir(os.path.join(os.path.split(currDir)[0], "cogs"))if x.endswith(".py")]
+COGS = [os.path.abspath(x) for x in os.listdir(os.path.join(os.path.split(currDir)[0], "cogs"))if x.endswith(".py")]
 
 
 
@@ -45,9 +45,9 @@ class Bot(BotBase):
         )
 
     def setup(self):
-        for cog in COGS:
-            print(os.path.join(os.path.split(currDir)[0], "cogs", cog, ".py"))
-            self.load_extension(os.path.join(os.path.split(currDir)[0], "cogs", cog, ".py"))
+        for filename in os.listdir(os.listdir(os.path.join(os.path.split(currDir)[0], "cogs"))):
+            if filename.endswith('.py'):
+                self.load_extension(f'cogs.{filename[:-3]}')
         print("setup complete")
 
     def run(self, version):
