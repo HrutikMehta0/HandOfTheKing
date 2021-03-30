@@ -71,7 +71,7 @@ class Bot(BotBase):
             self.guild = self.get_guild(816486491941109791)
             self.stdout = self.get_channel(824689618334384138)
             self.welcome = self.get_channel(816491731503546368)
-            print([getattr(self, cog) for cog in COGS])
+            print([getattr(self, os.path.splitext(os.path.basename(cog))[0]) for cog in COGS])
 
             while not self.cogs_ready.all_ready():
                 await sleep(0.5)
