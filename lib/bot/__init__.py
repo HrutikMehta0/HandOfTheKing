@@ -67,15 +67,18 @@ class Bot(BotBase):
         raise
 
     async def on_ready(self):
+        print("1.bot ready")
         if not self.ready:
+            print("2.bot ready")
             self.guild = self.get_guild(816486491941109791)
             self.stdout = self.get_channel(824689618334384138)
             self.welcome = self.get_channel(816491731503546368)
 
             while not self.cogs_ready.all_ready():
+                print("3.bot ready")
                 await sleep(0.5)
-
-            self.stdout.send("Now online")
+            print("4.bot ready")
+            await self.stdout.send("Now online")
             self.ready = True
             print("bot ready")
         else:
