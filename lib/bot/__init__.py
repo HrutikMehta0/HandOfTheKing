@@ -74,7 +74,6 @@ class Bot(BotBase):
             self.welcome = self.get_channel(816491731503546368)
 
             while not self.cogs_ready.all_ready():
-                print(self.cogs_ready.all_ready())
                 await sleep(0.5)
             await self.stdout.send("Now online")
             self.ready = True
