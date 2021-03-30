@@ -15,15 +15,14 @@ COGS = [x for x in os.listdir(os.path.join(os.path.split(currDir)[0], "cogs")) i
 class Ready(object):
     def __init__(self):
         for cog in COGS:
-            cog = os.path.splitext(os.path.basename(cog))[0]
-            setattr(self, cog, False)
+            setattr(self, os.path.splitext(os.path.basename(cog))[0], False)
 
     def ready_up(self, cog):
-        setattr(self, cog, True)
+        setattr(self, os.path.splitext(os.path.basename(cog))[0], True)
         print(f"{cog} cog ready")
 
     def all_ready(self):
-        return all([getattr(self, cog) for cog in COGS])
+        return all([getattr(self, os.path.splitext(os.path.basename(cog))[0]) for cog in COGS])
 
 
 class Bot(BotBase):
@@ -45,7 +44,7 @@ class Bot(BotBase):
 
     def setup(self):
         for cog in COGS:
-            self.load_extension(f"lib.cogs.{cog}")
+            self.load_extension(f"lib.cogs.{os.path.splitext(os.path.basename(cog))[0]}")
         print("setup complete")
 
     def run(self, version):
