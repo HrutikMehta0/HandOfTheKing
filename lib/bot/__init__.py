@@ -72,8 +72,8 @@ class Bot(BotBase):
             self.stdout = self.get_channel(824689618334384138)
             self.welcome = self.get_channel(816491731503546368)
 
-            # while not self.cogs_ready.all_ready():
-            #     await sleep(0.5)
+            while not self.cogs_ready.all_ready():
+                await sleep(1)
 
             self.ready = True
             print("bot ready")
