@@ -8,7 +8,7 @@ from discord.ext.commands import Bot as BotBase
 currDir = os.path.dirname(__file__)
 PREFIX = "-"
 OWNER_IDS = []
-TOKEN = 'ODIyMjI2OTM2OTUyMzg5NjMz.YFPMgg.sPKEHVvBjmMpIiHaED5PuUfE9yw'
+TOKEN = os.getenv('TOKEN')
 COGS = [x for x in os.listdir(os.path.join(os.path.split(currDir)[0], "cogs")) if x.endswith(".py")]
 
 
