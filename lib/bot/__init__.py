@@ -9,8 +9,7 @@ currDir = os.path.dirname(__file__)
 PREFIX = "-"
 OWNER_IDS = []
 TOKEN = 'ODIyMjI2OTM2OTUyMzg5NjMz.YFPMgg.PzDj3fimGrrxHaWYa0h6ke8H7e4'
-COGS = [x for x in os.listdir(os.path.join(os.path.split(currDir)[0], "cogs"))if x.endswith(".py")]
-
+COGS = [x for x in os.listdir(os.path.join(os.path.split(currDir)[0], "cogs")) if x.endswith(".py")]
 
 
 class Ready(object):
