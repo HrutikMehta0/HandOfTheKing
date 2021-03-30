@@ -73,7 +73,7 @@ class Bot(BotBase):
             self.welcome = self.get_channel(816491731503546368)
 
             while not self.cogs_ready.all_ready():
-                await sleep(1)
+                await sleep(0.5)
 
             self.ready = True
             print("bot ready")
