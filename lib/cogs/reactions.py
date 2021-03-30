@@ -10,6 +10,7 @@ roles_emojis = {
 
 class Reactions(Cog):
     def __init__(self, bot):
+        self.reaction_message = None
         self.bot = bot
 
     @Cog.listener()
