@@ -71,10 +71,12 @@ class Bot(BotBase):
             self.guild = self.get_guild(816486491941109791)
             self.stdout = self.get_channel(824689618334384138)
             self.welcome = self.get_channel(816491731503546368)
+            print([getattr(self, cog) for cog in COGS])
 
             while not self.cogs_ready.all_ready():
                 await sleep(0.5)
 
+            print(([getattr(self, cog) for cog in COGS]))
             self.ready = True
             print("bot ready")
         else:
