@@ -75,7 +75,6 @@ class Bot(BotBase):
             while not self.cogs_ready.all_ready():
                 await sleep(0.5)
 
-            print(([getattr(self, cog) for cog in COGS]))
             self.ready = True
             print("bot ready")
         else:
