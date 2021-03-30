@@ -74,7 +74,8 @@ class Bot(BotBase):
 
             while not self.cogs_ready.all_ready():
                 await sleep(0.5)
-            await self.stdout.send("Now online")
+
+            self.stdout.send("Now online")
             self.ready = True
             print("bot ready")
         else:
