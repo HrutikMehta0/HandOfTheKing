@@ -15,6 +15,7 @@ COGS = [x for x in os.listdir(os.path.join(os.path.split(currDir)[0], "cogs")) i
 class Ready(object):
     def __init__(self):
         for cog in COGS:
+            cog = os.path.splitext(os.path.basename(cog))[0]
             setattr(self, cog, False)
 
     def ready_up(self, cog):
