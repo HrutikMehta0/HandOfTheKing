@@ -10,12 +10,12 @@ roles_emojis = {
 
 class Reactions(Cog):
     def __init__(self, bot):
-        self.reaction_message = self.bot.get_channel(816694604840828949).fetch_message(824483191813177416)
         self.bot = bot
 
     @Cog.listener()
     async def on_ready(self):
         if not self.bot.ready:
+            self.reaction_message = await self.bot.get_channel(816694604840828949).fetch_message(824483191813177416)
             self.bot.cogs_ready.ready_up("reactions")
 
     # @Cog.listener()
